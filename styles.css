@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap);
 
+/*#region Global/Body Styling */
+
 /* Root, Variables, Global Variables */
 
 :root {
@@ -7,6 +9,7 @@
 }
 
 /* Colors */
+/* Light Theme */
 body.light-theme {
   --primary-bg-color: #f7f7f7;   /* Lighter background color */
   --secondary-bg-color: #eaeaea; /* Light background color */
@@ -24,7 +27,6 @@ body.dark-theme {
   --tertiary-text-color: #b5b5b5; /* Less prominent text color */
   --header-element-color: #d4d4d4; /* Header elements color (adjust if needed) */
 }
-
 
 
 /* Reset some default styles */
@@ -47,7 +49,7 @@ body {
     font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
   }
   
-
+/* #endregion */
 
 /*#region Header */
 
@@ -441,10 +443,102 @@ svg#Luna {
 
 /* #endregion */
 
-/*#region Test */
-  
 
-   
+
+
+/*#region Index Stuff */
+
+.banner {
+  padding: 16em 0 13em 0;
+  background-attachment: fixed;
+  background-image: url(https://lunauwu.net/images/banner.webp);
+  box-shadow: inset 0 0 0 1000px #2e2d34bd;
+  background-position: center top;
+  background-size: cover;
+  line-height: 1.75;
+  text-align: center;
+}
+
+/*#region Section1 */
+/* Apply general styling to the section */
+.section1 {
+  padding: 3rem;
+  background-color: var(--primary-bg-color);
+  text-align: center; /* Center content within the section */
+}
+
+/* Center-align section title */
+.section1 h2 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Adjust the width of the lists and center them */
+.section1 ul {
+  display: flex; /* Display lists side by side */
+  justify-content: center; /* Center lists horizontally */
+  flex-wrap: wrap; /* Allow lists to wrap to a new line if needed */
+  max-width: 700px; /* Set maximum width for the lists */
+  margin: 20px auto; /* Center-align the lists */
+  padding: 0; /* Remove default padding */
+  list-style-type: none; /* Remove list bullets */
+}
+
+/* Style individual list items */
+.section1 li {
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-right: 10px; /* Add space between list items */
+}
+
+/* Arrange the divs side by side */
+.section1 .divs-container {
+  display: flex;
+  justify-content: center; /* Center divs horizontally */
+  align-items: center; /* Center divs vertically */
+  margin-top: 20px; /* Add space between title and divs */
+  overflow: auto; /* Allow horizontal scrolling if content overflows */
+}
+
+/* Style the divs */
+.section1 .randomness,
+.section1 .passions {
+  width: calc(50% - 1.5rem); /* Adjusted width with fixed spacing */
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0.75rem; /* Add half of the fixed spacing as margin */
+}
+
+/* Add fixed spacing between divs */
+.section1 .randomness {
+  margin-right: 1.5rem;
+}
+
+/* Style individual list items and force them onto new lines */
+.section1 li {
+  display: block; /* Force each list item onto a new line */
+}
+
+
+/* Set font and color for paragraph text */
+.section1 p {
+  font-size: 16px;
+  color: var(--tertiary-text-color);
+}
+
+/* Style the background and text of individual items */
+.randomness li,
+.passions li {
+  background-color: var(--secondary-bg-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*#endregion */
 
   
 
