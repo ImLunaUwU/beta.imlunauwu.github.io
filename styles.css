@@ -1,5 +1,24 @@
 @import url(https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap);
 
+
+
+/* Styling for the overlay banner */
+.overlay-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  z-index: 9999; /* Ensure the banner is on top of other content */
+}
+
+
+
+
 /*#region Global/Body Styling */
 
 /* Root, Variables, Global Variables */
@@ -46,7 +65,7 @@ body {
     background-color: var(--secondary-bg-color);
     background: #121212;
     color: var(--primary-text-colorA);
-    font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+    font-family: "Plus Jakarta Sans";
   }
   
 /* #endregion */
@@ -179,14 +198,6 @@ svg#Luna {
  /*#endregion */
 
 /*#region Footer */
-  
-
-
-#footer {
-    padding: 8em 0 6em 0;
-    background: var(--primary-bg-color);
-    text-align: center;
-}
 
   /* Footer Icons */
 
@@ -212,7 +223,7 @@ svg#Luna {
   
  #footer {
     padding: 4em 0 2em 0;
-    background: var(--primary-bg-color);
+    background: var(--secondaty-bg-color);
     text-align: center;
   }
   
@@ -473,6 +484,8 @@ svg#Luna {
   text-align: center;
 }
 
+
+
 /* Adjust the width of the lists and center them */
 .section1 ul {
   display: flex; /* Display lists side by side */
@@ -500,22 +513,10 @@ svg#Luna {
   justify-content: center; /* Center divs horizontally */
   align-items: center; /* Center divs vertically */
   margin-top: 20px; /* Add space between title and divs */
-  overflow: auto; /* Allow horizontal scrolling if content overflows */
+
 }
 
-/* Style the divs */
-.section1 .randomness,
-.section1 .passions {
-  width: calc(50% - 1.5rem); /* Adjusted width with fixed spacing */
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 0.75rem; /* Add half of the fixed spacing as margin */
-}
 
-/* Add fixed spacing between divs */
-.section1 .randomness {
-  margin-right: 1.5rem;
-}
 
 /* Style individual list items and force them onto new lines */
 .section1 li {
@@ -540,7 +541,108 @@ svg#Luna {
 
 /*#endregion */
 
+/*#region Section2 */
+
+/* Apply general styling to the section */
+.section2 {
+  padding: 3rem;
+  background-color: var(--secondary-bg-color);
+  text-align: center; /* Center content within the section */
+}
+
+/* Arrange the divs side by side */
+.section2 .image-section {
+  display: flex;
+  justify-content: center; /* Center divs horizontally */
+  align-items: flex-start; /* Center divs vertically */
+  margin-top: 20px; /* Add space between title and divs */
+
+}
+
+.playtime-text {
+  margin-top: .4em;
+  filter: brightness(150%);
+}
+
+
+/* Set font and color for paragraph text */
+.image-section p {
+  font-size: 16px;
+  color: var(--tertiary-text-color);
+}
+
+/* Apply general styling to the section */
+.image-section {
+  display: table;
+
+}
+
+.image-container {
+  display: table-cell;
+  text-align: center;
+  position: relative;
+  max-width: 30em;
+  margin-inline: 4em; /* The small space in between the two images. */
+}
+
+h3.image-title {
+padding-bottom: .4em;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  height: auto;
+}
+
+.caption-box {
+  align-items: center; /* Center divs vertically */
+  background-color: var(--primary-bg-color);
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  box-sizing: border-box;
+  position: static; /* No moving >:) */
+  width: 100%; 
+  margin-top: -.4rem;
+  }
+
+.caption {
+  margin: 0;
+}
+/*#endregion */
   
+/*#region Section 3 */
+
+/* Apply styling to the FAQ section */
+.faq-section {
+  padding: 3rem;
+  background-color: var(--primary-bg-color);
+  text-align: center;
+}
+
+/* Style FAQ items */
+.faq-item {
+  margin-top: 2rem;
+}
+
+/* Style FAQ questions */
+.faq-item h3.question {
+  font-size: 20px;
+  color: var(--primary-text-color);
+}
+
+/* Style FAQ answers */
+.faq-item p.answer {
+  font-size: 16px;
+  color: var(--secondary-text-color);
+}
+
+
+
+/*#endregion*/
+
+
+
 
   
  

@@ -24,6 +24,16 @@
 <body>
     <div class="nav-header" data-include="header"></div>
 
+
+
+  <!-- WIP Warning Overlay Banner -->
+  <div class="overlay-banner">
+    <p>This website is a work in progress. Some features may not be available.</p>
+    <a href="/mindmap.png">Click here to see the current progress status.</a>
+  </div>
+
+
+
     <div class="banner">
       <h1>Hello, I'm Luna.</h1>
       <p>Trans woman and a huge nerd.</p>
@@ -51,29 +61,125 @@
           <li>I'm gayer than your refrigerator.</li>
         </ul>
       </div>
+      </div>
+    </div>
+
+
+
+    <script>
+      fetch('https://api.lunauwu.net/playtime')
+          .then(response => response.json())
+          .then(data => {
+              // Update VRChat playtime
+              const vrcPlaytimeElement = document.getElementById('vrc-playtime');
+              vrcPlaytimeElement.textContent = `Hours on record: ${(data.vrchat.playtime / 60).toFixed(1)} hours`;
+
+              // Update VRChat image
+              const vrcImageElement = document.getElementById('vrc-image');
+              vrcImageElement.src = data.vrchat.image;
+
+              // Update Beat Saber playtime
+              const bsPlaytimeElement = document.getElementById('bs-playtime');
+              bsPlaytimeElement.textContent = `Hours on record: ${(data.beat_saber.playtime / 60).toFixed(1)} hours`;
+
+              // Update Beat Saber image
+              const bsImageElement = document.getElementById('bs-image');
+              bsImageElement.src = data.beat_saber.image;
+          })
+          .catch(error => {
+              console.error('Error fetching playtime data:', error);
+          });
+  </script>
+
+
+
+<div class="section2">
+  <h2>My heavy addiction to the virtual world</h2>
+<section class="image-section">
+  <div class="image-container">
+    <h3 class="image-title">VRChat, a social platform.</h3>
+    <img id="vrc-image" src="assets\image\loading.png" alt="VRChat">
+    <div class="caption-box">
+      <p class="caption">The social platform I've spent the most time and money on. I recommend only trying it if you're above 16 years of age.</p>
+      <p class="playtime-text" id="vrc-playtime">Loading...</p>
     </div>
   </div>
+  <div class="image-container">
+    <h3 class="image-title">Beat Saber, a rythm game.</h3>
+    <img id="bs-image" src="assets\image\loading.png" alt="Beat Saber">
+    <div class="caption-box">
+      <p class="caption">This game is not for the weak. It is responsible for countless injuries and broken hardware. Only play if you're ready to suffer.</p>
+      <p class="playtime-text" id="bs-playtime">Loading...</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+
+window.addEventListener('load', function() {
+  const birthDate = new Date('2004-06-15'); // Replace with your birth date
+  const currentDate = new Date();
+  let age = currentDate.getFullYear() - birthDate.getFullYear();
+  const birthMonth = birthDate.getMonth();
+  const currentMonth = currentDate.getMonth();
+  const birthDay = birthDate.getDate();
+  const currentDay = currentDate.getDate();
+  if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+    age--;
+  }
+
+  const agePlaceholder = document.getElementById('agePlaceholder');
+  agePlaceholder.textContent = age;
+
+  const formattedBirthDate = birthDate.toLocaleDateString('en-GB');
+  const tooltipMessage = `I was born on ${formattedBirthDate}.`;
+  const omgimthisoldElement = document.getElementById('omgimthisold');
+  omgimthisoldElement.setAttribute('title', tooltipMessage);
+});
 
 
+</script>
 
-  <section id="home">
-    <h1>Welcome to Luna's Beta website.</h1>
-    <p>This site is actively being worked on.</p>
-    <a href="/mindmap.png">Click here to see the current progress status.</a>
+
+<div class="section3">
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3 class="question">Are you a furry?</h3>
+      <p class="answer">"Furry", the kind of person who has a special interest in anthropomorphic (Humanized) animals.<br>That sounds fitting I guess. So... Sure. I guess I might be a furry.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Who made your X?</h3>
+      <p class="answer">There's a big chance that what you see me use is made either fully or partially by me.<br>I am decently skilled when it comes to being creative, so I tend to do my own work for things like logos, banners, avatar textures and other things.<br>If it's not fully my work, I will happily give credit when asked..</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">What software do you use?</h3>
+      <p class="answer">I use a lot of Adobe software, such as Photoshop and After Effects<br>I orginally used Notepad++ to do my coding, but I later switched to Atom and now I'm using VSCode.<br>I also seem to like to use unstable software like Unity and Blender for some reason.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">What do you do?</h3>
+      <p class="answer">I mostly play games, mainly in VR, work a normal boring job and question my existence and life choices.<br>I also tend to start a bunch of projects that I never get to finishing.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="question">Any hobbies/interests?</h3>
+      <p class="answer">My hobbies are the following:<br>Gaming, VR stuff, server hosting, tech stuff, photography, coding, content creation and sleeping.</p>
+    </div>
+    <h4>And most importantly:</h4>
+    <div class="faq-item">
+      <h3 class="question">Who are you?</h3>
+      <p class="answer">I am Luna. I'm previously known as plsMajor.<br>I am an <span id="agePlaceholder"></span> year old, pansexual, transgender girl from Denmark.<br>I came out to the internet officially on January 11th 2022,<br>and to the real world almost exactly a year later in February of 2023.</p>
+    </div>
+<!--    
+    <div class="faq-item">
+      <h3 class="question">Q</h3>
+      <p class="answer">A</p>
+    </div>
+Hi future Luna! You can add more FAQ items if needed - Luna from the past. -->
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a passionate tech enthusiast with interests in gaming, VR, coding, and more.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <ul>
-      <li>Email: contact@lunauwu.net</li>
-      <li>Discord: imlunauwu</li>
-    </ul>
-  </section>
+</div>
 
 		<!-- Footer -->
 		<div data-include="footer"></div>
