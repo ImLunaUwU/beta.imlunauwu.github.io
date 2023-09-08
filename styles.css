@@ -43,35 +43,47 @@ html {
 /* Light Theme */
 body.light-theme {
   --primary-bg-color: #f7f7f7;   /* Lighter background color */
+  --single-content-page-bg-color: #F1F1F1; /* Inbetween BG color for pages with one element */
   --secondary-bg-color: #eaeaea; /* Light background color */
   --primary-text-color: #333333; /* Dark text color */
   --secondary-text-color: #1a1a1a;  /* Darker text color */
   --tertiary-text-color: #707070; /* Less prominent text color */
-  --header-element-color: #1f1f1f; /* Header elements color */
-  --header-color: #333333; /* Color of the header */
+  --header-element-color: #353535; /* Header elements color */
+  --header-color: #eeeeee; /* Color of the header */
   --banner-text-color: #f0f0f0; /* Banner text color */
+  --prog-bg-color: #b8b8b8; /* Color of usage bar bg on /servers */
+  --prog-main-color: #4f9dda; /* Color of usage bar bg on /servers */
 }
 
 /* Dark Theme Version */
 body.dark-theme {
   --primary-bg-color: #2b2b2b;   /* Darker background color */
   --secondary-bg-color: #1c1c1c; /* Even darker background color */
+  --single-content-page-bg-color: #242424; /* Inbetween BG color for pages with one element */
   --primary-text-color: #f0f0f0; /* Light text color */
   --secondary-text-color: #c7c7c7; /* Slightly darker text color */
   --tertiary-text-color: #b5b5b5; /* Less prominent text color */
   --header-element-color: #d4d4d4; /* Header elements color */
   --header-color: #333333; /* Color of the header */
-  --banner-text-color: #f0f0f0 /* Banner text color */
+  --banner-text-color: #f0f0f0; /* Banner text color */
+  --prog-bg-color: #707070; /* Color of usage bar bg on /servers */
+  --prog-main-color: #1d5a88; /* Color of usage bar bg on /servers */
 }
 
 
 /* Reset some default styles */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
+h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
   }
-  
-  section {
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  }
+
+section {
     padding: 2rem;
   }
 
@@ -241,6 +253,7 @@ svg#Luna {
   
  #footer {
     padding: 4em 0 2em 0;
+    margin: 0;
     background-color: var(--secondary-bg-color);
     text-align: center;
   }
@@ -678,6 +691,7 @@ padding-bottom: .4em;
 /* Style contact item headings */
 .contact-item h3 {
   font-size: 20px;
+  padding-top: 1rem;
   color: var(--primary-text-color);
 }
 
@@ -760,4 +774,103 @@ padding-bottom: .4em;
 }
 
   
- 
+ /*#endregion*/
+
+/*#region Servers */
+
+
+.div-containerer {
+  background-color: var(--primary-bg-color);
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.sysmonitor-container {
+  margin: 20px;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color); 
+}
+
+
+h1 {
+  text-align: center;
+  color: var(--primary-text-color); 
+}
+
+#chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.chart {
+  width: 45%;
+  margin-bottom: 20px;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow yaaay */
+  background-color: var(--single-content-page-bg-color);
+}
+
+.chart canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-text-color); 
+}
+
+.usage-info {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#drives {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#drives li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.progress {
+  height: 20px;
+  background-color: var(--prog-bg-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--prog-main-color);
+  color: var(--primary-text-color); 
+  text-align: center;
+  line-height: 20px;
+}
+
+h4.yeet {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*#endregion*/
+
+
+
+
+
+
+
+
+
+
+
+/* Space to allow for new region creation without having to open the others */
