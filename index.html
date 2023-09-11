@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+
 <!-- Primary Meta Tags -->
 <title>Luna</title>
-<meta name="title" content="LunaUwU - Content nobody asked for." />
+<meta name="title" content="LunaUwU - Content nobody asked for.">
 <meta name="description" content="Luna is a trans woman and huge nerd. On this site you can learn much more about her and what makes her special. 
-Gay furries are cute asf istg..." />
+Gay furries are cute asf istg...">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lunauwu.net/" />
-<meta property="og:title" content="LunaUwU - Content nobody asked for." />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lunauwu.net/">
+<meta property="og:title" content="LunaUwU - Content nobody asked for.">
 <meta property="og:description" content="Luna is a trans woman and huge nerd. On this site you can learn much more about her and what makes her special. 
-Gay furries are cute asf istg..." />
-<meta property="og:image" content="/assets/image/website.png" />
+Gay furries are cute asf istg...">
+<meta property="og:image" content="/assets/image/website.png">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://lunauwu.net/" />
-<meta property="twitter:title" content="LunaUwU - Content nobody asked for." />
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://lunauwu.net/">
+<meta property="twitter:title" content="LunaUwU - Content nobody asked for.">
 <meta property="twitter:description" content="Luna is a trans woman and huge nerd. On this site you can learn much more about her and what makes her special. 
-Gay furries are cute asf istg..." />
-<meta property="twitter:image" content="/assets/image/website.png" />
+Gay furries are cute asf istg...">
+<meta property="twitter:image" content="/assets/image/website.png">
 </head>
 
-<body class="landing" id="bodyloading">
-    <div class="container" id="finishedloading"> <!-- Load (Eye saver) -->
-        <div class="overlay" id="loading">
-            <div class="loader">
-            <div class="inner one"></div>
-            <div class="inner two"></div>
-            <div class="inner three"></div>
-        </div>
-        <div class="loading-text" id="loading-text">
-            <span>Loading. Please wait.</span>
-        </div>
-      </div>
-  </div>
+<body id="bodyloading">
 
-<body>
+  <div class="landing">
+      <div class="container" id="finishedloading"> <!-- Load (Eye saver) -->
+          <div class="overlay" id="loading">
+              <div class="loader">
+              <div class="inner one"></div>
+              <div class="inner two"></div>
+              <div class="inner three"></div>
+          </div>
+          <div class="loading-text" id="loading-text">
+              <span>Loading. Please wait.</span>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  
     <div class="nav-header" data-include="header"></div>
 
     <div class="banner">
@@ -108,7 +112,7 @@ Gay furries are cute asf istg..." />
 <section class="image-section">
   <div class="image-container">
     <h3 class="image-title">VRChat, a social platform.</h3>
-    <img id="vrc-image" src="assets\image\loading.png" alt="VRChat">
+    <img id="vrc-image" src="assets/image/loading.png" alt="VRChat">
     <div class="caption-box">
       <p class="caption">The social platform I've spent the most time and money on. I recommend only trying it if you're above 16 years of age.</p>
       <p class="playtime-text" id="vrc-playtime">Loading...</p>
@@ -116,7 +120,7 @@ Gay furries are cute asf istg..." />
   </div>
   <div class="image-container">
     <h3 class="image-title">Beat Saber, a rythm game.</h3>
-    <img id="bs-image" src="assets\image\loading.png" alt="Beat Saber">
+    <img id="bs-image" src="assets/image/loading.png" alt="Beat Saber">
     <div class="caption-box">
       <p class="caption">This game is not for the weak. It is responsible for countless injuries and broken hardware. Only play if you're ready to suffer.</p>
       <p class="playtime-text" id="bs-playtime">Loading...</p>
@@ -140,11 +144,11 @@ window.addEventListener('load', function() {
   }
 
   const agePlaceholder = document.getElementById('agePlaceholder');
-  agePlaceholder.textContent = age;
+  agePlaceholder.textContent = `${age} year old`;
 
   const formattedBirthDate = birthDate.toLocaleDateString('en-GB');
   const tooltipMessage = `I was born on ${formattedBirthDate}.`;
-  const omgimthisoldElement = document.getElementById('omgimthisold');
+  const omgimthisoldElement = document.getElementById('agePlaceholder');
   omgimthisoldElement.setAttribute('title', tooltipMessage);
 });
 
@@ -179,7 +183,7 @@ window.addEventListener('load', function() {
     <h4>And most importantly:</h4>
     <div class="faq-item">
       <h3 class="question">Who are you?</h3>
-      <p class="answer">I am Luna. I'm previously known as plsMajor.<br>I am an <span id="agePlaceholder"></span> year old, pansexual, transgender girl from Denmark.<br>I came out to the internet officially on January 11th 2022,<br>and to the real world almost exactly a year later in February of 2023.</p>
+      <p class="answer">I am Luna. I'm previously known as plsMajor.<br>I am an <span id="agePlaceholder"></span>, pansexual, transgender girl from Denmark.<br>I came out to the internet officially on January 11th 2022,<br>and to the real world almost exactly a year later in February of 2023.</p>
     </div>
 <!--    
     <div class="faq-item">

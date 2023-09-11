@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Width Warning Overlay Banner -->
+<div class="width-banner" id="widthBanner">
+  <button class="close-button" onclick="closeWidthBanner()">X</button>
+  <p>Your device has a very narrow screen.</p>
+  <p>This website may not display correctly in some areas.</p>
+</div>
+<script>
+// Function to close the width banner
+function closeWidthBanner() {
+  var banner = document.getElementById('widthBanner');
+  banner.classList.add('closed');
+}
+
+// Automatically close the width banner after 10 seconds
+setTimeout(function () {
+  closeWidthBanner();
+  var el = document.getElementById('widthBanner');
+	el.remove();
+}, 10000); // 10000 milliseconds (10 seconds)
+
+</script>
 <section class="top-nav"> 
   <svg id="Luna" xmlns="http://www.w3.org/2000/svg" version="1.0" width="5%" viewBox="0 0 1642.000000 560.000000" preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,560.000000) scale(0.100000,-0.100000)">
@@ -11,7 +32,7 @@
     </g>
   </svg>
 
-      <ul class="nav-menu" role="navigation">
+      <ul class="nav-menu">
       <li class="nav-item"><a href="index" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="servers" class="nav-link">Servers</a></li>
       <li class="nav-item"><a href="contact" class="nav-link">Contact/Socials</a></li>
@@ -46,5 +67,6 @@
       <p>This website is a work in progress. Some features may not be available.</p>
       <a href="/mindmap.png">Click here to see the current progress status.</a>
     </div>
+
 
 </html>

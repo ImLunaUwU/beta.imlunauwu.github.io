@@ -34,17 +34,16 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-}
-html {
   -webkit-font-smoothing: antialiased !important;
 }
+
 
 /* Colors */
 /* Light Theme */
 body.light-theme {
   --primary-bg-color: #f7f7f7;   /* Lighter background color */
-  --single-content-page-bg-color: #F1F1F1; /* Inbetween BG color for pages with one element */
   --secondary-bg-color: #eaeaea; /* Light background color */
+  --single-content-page-bg-color: #e4e4e4; /* Inbetween BG color for pages with one element */
   --primary-text-color: #333333; /* Dark text color */
   --secondary-text-color: #1a1a1a;  /* Darker text color */
   --tertiary-text-color: #707070; /* Less prominent text color */
@@ -96,6 +95,10 @@ body {
     color: var(--primary-text-color);
     font-family: "Plus Jakarta Sans";
   }
+
+  button {
+    cursor: pointer;
+}
   
 /* #endregion */
 
@@ -389,7 +392,7 @@ svg#Luna {
     display: inline-block;
     margin: 0 0.3125em;
     color: #fff;
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-family: "Plus Jakarta Sans";
   }
   
   .loading-text2 {
@@ -402,7 +405,7 @@ svg#Luna {
     display: inline-block;
     margin: 0 5px;
     color: #fff;
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-family: "Plus Jakarta Sans";
   }
   
   .loader {
@@ -485,6 +488,50 @@ svg#Luna {
 
 /* #endregion */
 
+/* Add styles for the close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000; /* Change the color as needed */
+  pointer-events: all;
+}
+
+/* Style the width banner */
+.width-banner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f4433667; /* Change the background color as needed */
+  color: #fff; /* Change the text color as needed */
+  padding: 10px;
+  text-align: center;
+  z-index: 9999; /* Ensure it's on top of other content */
+  opacity: 100;
+  transition: opacity 1s ease;
+  pointer-events: none; /* Make the banner non-interactive */
+}
+
+/* Optional: Add transition for a smooth close animation */
+.width-banner.closed {
+  opacity: 0; /* Hide the banner with a fade-out effect */
+  transition: opacity 2s ease;
+  pointer-events: none; /* Make the banner non-interactive */
+}
+
+@media (max-width:375px) {
+  .width-banner {
+    display: initial;
+  }
+}
+
+/*#endregion*/
 
 
 
@@ -499,6 +546,9 @@ svg#Luna {
   background-size: cover;
   line-height: 1.75;
   text-align: center;
+}
+
+.banner h1, .banner p {
   color: var(--banner-text-color);
 }
 
@@ -577,25 +627,18 @@ svg#Luna {
 
 /* Apply general styling to the section */
 .section2 {
-  padding: 3rem;
+  padding: 3rem 0;
   background-color: var(--secondary-bg-color);
-  text-align: center; /* Center content within the section */
+  text-align: center;
 }
 
 /* Arrange the divs side by side */
-.section2 .image-section {
+.image-section {
   display: flex;
-  justify-content: center; /* Center divs horizontally */
-  align-items: flex-start; /* Center divs vertically */
+  justify-content: space-between;
+  align-items: stretch; /* Extend .image-container to match the height of .image-section */
   margin-top: 20px; /* Add space between title and divs */
-
 }
-
-.playtime-text {
-  margin-top: .4em;
-
-}
-
 
 /* Set font and color for paragraph text */
 .image-section p {
@@ -603,22 +646,26 @@ svg#Luna {
   color: var(--tertiary-text-color);
 }
 
-/* Apply general styling to the section */
-.image-section {
-  display: table;
-
+/* Apply general styling to .image-container */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 50%;
+  padding: 0 2em;
+  box-sizing: border-box;
 }
 
-.image-container {
-  display: table-cell;
-  text-align: center;
-  position: relative;
-  max-width: 30em;
-  margin-inline: 4em; /* The small space in between the two images. */
+@media (max-width:1000px) {
+  .image-container {
+    width: 80%;
+    padding: 0 0.5em; /* Adjust the gap between containers */
+  }
 }
 
 h3.image-title {
-padding-bottom: .4em;
+  padding-bottom: 0.4em;
 }
 
 .image-container img {
@@ -628,19 +675,28 @@ padding-bottom: .4em;
 }
 
 .caption-box {
-  align-items: center; /* Center divs vertically */
   background-color: var(--primary-bg-color);
   padding: 15px;
   border-radius: 0 0 8px 8px;
   box-sizing: border-box;
-  position: static; /* No moving >:) */
-  width: 100%; 
-  margin-top: -.4rem;
-  }
+  width: 100%;
+  height: 100%; /* Ensure both .caption-box elements have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align .playtime-text to the bottom */
+}
+
+.playtime-text {
+  margin-top: auto; /* Align .playtime-text to the bottom */
+  margin-bottom: 0.4em; /* Add a small gap */
+}
 
 .caption {
   margin: 0;
 }
+
+
+
 /*#endregion */
   
 /*#region Section 3 */
@@ -780,14 +836,14 @@ padding-bottom: .4em;
 
 
 .div-containerer {
-  background-color: var(--primary-bg-color);
+  background-color: var(--single-content-page-bg-color);
   box-sizing: border-box;
   overflow: auto;
 }
 
 .sysmonitor-container {
   margin: 20px;
-  background-color: var(--primary-bg-color);
+  background-color: var(--single-content-page-bg-color);
   color: var(--primary-text-color); 
 }
 
@@ -802,6 +858,20 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+@media (max-width:1000px) {
+  #chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .chart {
+    width: 90% !important;
+    align-self: center;
+  }
+}
+
 
 .chart {
   width: 45%;
