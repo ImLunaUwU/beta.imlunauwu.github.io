@@ -35,9 +35,8 @@
   outline: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased !important;
-  
+  font-weight: 500;
 }
-
 
 /* Colors */
 /* Light Theme */
@@ -97,10 +96,16 @@ a:active {
 } 
 
 
+
+
 /* Reset some default styles */
 h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
+  }
+
+  h1, h2, h3 {
+    font-weight: 600;
   }
 
 body, html {
@@ -626,6 +631,11 @@ svg#Luna {
 
 }
 
+@media (max-width:720px) {
+  .section1 .divs-container {
+    flex-direction: column; 
+  }
+}
 
 
 /* Style individual list items and force them onto new lines */
@@ -667,6 +677,23 @@ svg#Luna {
   align-items: stretch; /* Extend .image-container to match the height of .image-section */
   margin-top: 20px; /* Add space between title and divs */
   padding: 0 10rem;
+}
+
+@media (max-width:1000px) {
+.image-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+    padding: 0 2rem;
+    flex-direction: column;
+}
+}
+
+@media (max-width:1000px) {
+.image-title {
+    margin-top: 20px;
+}
 }
 
 /* Set font and color for paragraph text */
@@ -957,7 +984,7 @@ h1 {
   line-height: 20px;
 }
 
-h4.yeet {
+h4.center-text {
   text-align: center;
   padding-bottom: 20px;
 }
